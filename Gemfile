@@ -1,10 +1,29 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-# Use Postgres as the database for Active Record
-gem 'pg'
+
+group :development, :test do
+	# Use Postgres as the database for Active Record
+	gem 'pg'
+
+	# Use Rspec-rails for testing
+	gem 'rspec-rails', '3.0.2'	
+end
+
+group :production do
+	# Use Postgres as the database for Active Record
+	gem 'pg'
+
+	# Use Rspec-rails for testing
+	gem 'rspec-rails', '3.0.2'	
+
+	# Heroku specific
+	gem 'rails_12factor', '0.0.2'
+end	
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
